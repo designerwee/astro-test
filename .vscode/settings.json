@@ -1,0 +1,25 @@
+{
+   "editor.formatOnSave": true,
+   "editor.defaultFormatter": "astro-build.astro-vscode",
+
+   "[astro]": {
+      "editor.defaultFormatter": "astro-build.astro-vscode"
+   },
+
+   "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "[jsx]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+   "[tsx]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+   },
+
+   "prettier.documentSelectors": ["**/*.astro"],
+   "tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]],
+   "js/ts.validate.enabled": false
+}

@@ -1,0 +1,33 @@
+---
+// classList 기본값
+const defaultClassList = {
+	className: 'btn-base',
+	bgColor: '',
+	fontColor: '',
+	borderColor: '',
+	hoverBgColor: '',
+	hoverFontColor: '',
+	hoverBorderColor: '',
+	fontWeight: '',
+};
+
+// ...rest: classList를 제외한 나머지 props
+const { classList = { ...defaultClassList }, ...rest } = Astro.props;
+
+// .filter(Boolean): 빈 문자열('') 제거 → 불필요한 클래스 방지 (유효한 클래스만 필터링)
+const filteredClassList = [
+	'btn', // 필수 클래스
+	classList.className,
+	classList.bgColor,
+	classList.fontColor,
+	classList.borderColor,
+	classList.hoverBgColor,
+	classList.hoverFontColor,
+	classList.hoverBorderColor,
+	classList.fontWeight,
+].filter(Boolean);
+---
+
+<button class:list={filteredClassList} {...rest}>
+	<slot />
+</button>
